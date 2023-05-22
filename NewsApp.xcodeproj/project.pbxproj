@@ -58,11 +58,11 @@
 		41F22CA12A169DF000B418AF /* NewsApp */ = {
 			isa = PBXGroup;
 			children = (
+				41F22CB82A16A3ED00B418AF /* Models */,
 				41F22CA22A169DF000B418AF /* AppDelegate.swift */,
 				41F22CA42A169DF000B418AF /* SceneDelegate.swift */,
 				41F22CA62A169DF000B418AF /* ViewController.swift */,
 				41F22CB62A169FD500B418AF /* APICaller.swift */,
-				41F22CB82A16A3ED00B418AF /* Models */,
 				41F22CAB2A169DF100B418AF /* Assets.xcassets */,
 				41F22CAD2A169DF100B418AF /* LaunchScreen.storyboard */,
 				41F22CB02A169DF100B418AF /* Info.plist */,
