@@ -11,6 +11,8 @@ class ViewController: UIViewController {
     
     var listNews: NewsTableView?
     
+    private var cellsModel = [NewsTableViewCellViewModel]()
+    
     override func loadView() {
         listNews = NewsTableView()
         listNews?.configProtocolosTableView(delegate: self, dataSouce: self)
@@ -24,15 +26,22 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
+        view.backgroundColor = .white
         title = "News"
         navigationController?.navigationBar.prefersLargeTitles = true
         
-        APICaller.shared.getTopStories { result in
+        APICaller.shared.getTopStories { [weak self] result in
             switch result {
-            case .success(let response) :
-                print("deu bom")
-                break
+            case .success(let articles) :
+                self?.cellsModel = articles.compactMap({
+                    NewsTableViewCellViewModel(title: $0.title, subtitle: $0.description ?? "No Desc", imageURL: URL(string: $0.urlToImage ?? ""))
+                })
+                DispatchQueue.main.async {
+                    self?.listNews?.tableView.reloadData()
+                }
+
+                print("deu bom \(articles.count)")
+              
             case .failure(let error) :
                 print("deu ruim")
                 print(error)
@@ -44,17 +53,21 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return cellsModel.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = "newssss"
-        return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: NewsTableViewCell.identifier, for: indexPath) as? NewsTableViewCell
+        cell?.configure(with: cellsModel[indexPath.row])
+        return cell ?? UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         listNews?.tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
     }
     
 }

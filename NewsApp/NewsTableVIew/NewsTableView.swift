@@ -12,7 +12,7 @@ class NewsTableView: UIView {
     lazy var tableView: UITableView = {
         let tab = UITableView()
         tab.translatesAutoresizingMaskIntoConstraints = false
-        tab.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tab.register(NewsTableViewCell.self, forCellReuseIdentifier: NewsTableViewCell.identifier)
         return tab
     }()
 
