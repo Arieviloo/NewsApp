@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41392E342A1CDB3F006DCB36 /* NewsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41392E332A1CDB3F006DCB36 /* NewsTableView.swift */; };
 		41F22CA32A169DF000B418AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F22CA22A169DF000B418AF /* AppDelegate.swift */; };
 		41F22CA52A169DF000B418AF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F22CA42A169DF000B418AF /* SceneDelegate.swift */; };
 		41F22CA72A169DF000B418AF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F22CA62A169DF000B418AF /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		41392E332A1CDB3F006DCB36 /* NewsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableView.swift; sourceTree = "<group>"; };
 		41F22C9F2A169DF000B418AF /* NewsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41F22CA22A169DF000B418AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41F22CA42A169DF000B418AF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +41,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		41392E322A1CDAEB006DCB36 /* NewsTableVIew */ = {
+			isa = PBXGroup;
+			children = (
+				41392E332A1CDB3F006DCB36 /* NewsTableView.swift */,
+			);
+			path = NewsTableVIew;
+			sourceTree = "<group>";
+		};
 		41F22C962A169DF000B418AF = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +68,7 @@
 		41F22CA12A169DF000B418AF /* NewsApp */ = {
 			isa = PBXGroup;
 			children = (
+				41392E322A1CDAEB006DCB36 /* NewsTableVIew */,
 				41F22CB82A16A3ED00B418AF /* Models */,
 				41F22CA22A169DF000B418AF /* AppDelegate.swift */,
 				41F22CA42A169DF000B418AF /* SceneDelegate.swift */,
@@ -150,6 +161,7 @@
 			files = (
 				41F22CBA2A16A40400B418AF /* APIResponse.swift in Sources */,
 				41F22CA72A169DF000B418AF /* ViewController.swift in Sources */,
+				41392E342A1CDB3F006DCB36 /* NewsTableView.swift in Sources */,
 				41F22CA32A169DF000B418AF /* AppDelegate.swift in Sources */,
 				41F22CA52A169DF000B418AF /* SceneDelegate.swift in Sources */,
 				41F22CB72A169FD500B418AF /* APICaller.swift in Sources */,
