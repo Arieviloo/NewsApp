@@ -18,7 +18,6 @@ class NewsTableViewCell: UITableViewCell {
         screen.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(screen)
         screen.pin(to: contentView)
-        
     }
     
     required init?(coder: NSCoder) {
