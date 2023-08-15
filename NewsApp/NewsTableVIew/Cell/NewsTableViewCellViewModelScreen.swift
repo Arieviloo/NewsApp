@@ -61,8 +61,8 @@ class NewsTableViewCellViewModelScreen: UIView {
 //            newsImageView.leadingAnchor.constraint(equalTo: newsImageView.trailingAnchor, constant: 8),
             newsImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -4),
             
-            newsImageView.widthAnchor.constraint(equalToConstant: 150),
-            newsImageView.heightAnchor.constraint(equalToConstant: 140),
+            newsImageView.widthAnchor.constraint(equalToConstant: 140),
+            newsImageView.heightAnchor.constraint(equalToConstant: 120),
             
             newsImageView.centerYAnchor.constraint(equalTo: centerYAnchor)
             

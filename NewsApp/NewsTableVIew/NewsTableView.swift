@@ -10,11 +10,11 @@ import UIKit
 class NewsTableView: UIView {
     
     lazy var tableView: UITableView = {
-        let tab = UITableView()
-        tab.translatesAutoresizingMaskIntoConstraints = false
-        tab.register(NewsTableViewCell.self, forCellReuseIdentifier: NewsTableViewCell.identifier)
-        return tab
-    }()
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.register(NewsTableViewCell.self, forCellReuseIdentifier: NewsTableViewCell.identifier)
+        $0.separatorInset = .zero
+        return $0
+    }(UITableView())
 
     override init(frame: CGRect) {
         super.init(frame: frame)

@@ -11,6 +11,7 @@ import SafariServices
 class ViewController: UIViewController {
     
     var listNews: NewsTableView?
+    var serviceApi: APICaller = APICaller()
     
     private var articles = [Article]()
     private var cellsModel = [NewsTableViewCellViewModel]()
@@ -32,7 +33,7 @@ class ViewController: UIViewController {
         title = "News"
         navigationController?.navigationBar.prefersLargeTitles = true
         
-        APICaller.shared.getTopStories { [weak self] result in
+        serviceApi.getTopStories { [weak self] result in
             switch result {
             case .success(let articles) :
                 self?.articles = articles
@@ -76,7 +77,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
+        return 130
     }
     
 }
